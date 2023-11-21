@@ -1,4 +1,3 @@
-
 interface SuccessObjectResponse<T> {
   response: T;
 }

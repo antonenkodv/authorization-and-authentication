@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: postgresql://postgres:1111@postgres:5432/impulse_test?schema=public
+      PORT: 3000
+      JWT_EXPIRES_IN: 10h
+      JWT_SECRET: Long secret
+  postgres:
+    container_name: postgres
+    image: postgres:14
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=impulse_test
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1111
+      - POSTGRES_DB_SCHEMA=public
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  pgdata:

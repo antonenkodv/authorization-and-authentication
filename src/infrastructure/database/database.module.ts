@@ -5,8 +5,6 @@ import { PrismaService } from './services/prisma/prisma.service';
 @Module({
   imports: [],
   providers: [PrismaService],
-  exports: [PrismaService]
+  exports: [PrismaService],
 })
-export class DatabaseModule {
-
-}
+export class DatabaseModule {}

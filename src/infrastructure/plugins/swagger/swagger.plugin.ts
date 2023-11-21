@@ -3,11 +3,7 @@ import { INestApplication } from '@nestjs/common';
 
 const docPath = 'api-docs';
 
-export function setupSwagger(
-  appName: string,
-  app: INestApplication
-): void {
-
+export function setupSwagger(appName: string, app: INestApplication): void {
   const options = new DocumentBuilder()
     .setTitle(appName)
     .setDescription(`API documentation for the ${appName}`)
@@ -21,5 +17,4 @@ export function setupSwagger(
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup(docPath, app, document);
-
 }

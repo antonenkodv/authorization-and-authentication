@@ -4,19 +4,16 @@ import { ErrorResponse } from './interfaces/error-response.interface';
 
 @Catch(HttpException)
 export class HttpExceptionFilter implements ExceptionFilter {
-
   catch(exception: HttpException, host: ArgumentsHost): any {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
-    console.log('HttpException');
+    const statusCode = exception.getStatus();
 
-    const data: ErrorResponse = {
-      code: exception.getStatus(),
+    const errorResponse: ErrorResponse = {
+      code: statusCode,
       error: exception.message,
     };
 
-    response
-      .status(exception.getStatus())
-      .json(data);
+    response.status(statusCode).json(errorResponse);
   }
 }
