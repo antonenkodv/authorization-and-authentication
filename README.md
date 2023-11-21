@@ -20,7 +20,6 @@ $ CREATE DATABASE ${database_name};
 ```javascript
 DATABASE_URL = postgresql://${USERNAME}:${PASSWORD}@${HOST}:${PORT}/${DATABASE_NAME}?schema=public
 ```
-''
 - Install deps and run application
 ```bash
 # install all the dependencies listed in the package.json 
@@ -48,4 +47,4 @@ Github repository: [REPO](https://github.com/antonenkodv/authorization-and-authe
 ## Commands:
 1. `brew services start postgresql`  Starts the PostgreSQL service on your local machine using Homebrew
 2. `psql postgres`  Opens the PostgreSQL command-line interface (psql) and connects to the default postgres database
-3. `CREATE DATABASE impulse_test;` Create a new database within a PostgreSQL server
+3. `CREATE DATABASE ${database_name};` Create a new database within a PostgreSQL server
