@@ -15,9 +15,7 @@ ENV NODE_ENV development
 RUN yarn build
 
 COPY api-entrypoint.sh ./
+
 ENTRYPOINT ["sh", "api-entrypoint.sh"]
-#RUN npx prisma migrate deploy
 
 EXPOSE 3000
-
-#CMD ["yarn", "start:dev"]
