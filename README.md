@@ -8,9 +8,8 @@ Simply run the following command
 $ docker-compose up --build 
 
 ```
-## OR
 
-Locally 
+or Locally 
 -----
 - Configure database locally :
 ```bash
